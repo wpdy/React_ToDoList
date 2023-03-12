@@ -20,16 +20,22 @@ const ToDoMain = () => {
             id: 3,
             text: 'Go to the Cinema',
             isCompleted: false
-        },
+        }
     ])
 
-console.log(tasks)
+// console.log(tasks)
 
+
+    const addToDoNewTask = (text) => {
+        const temVar = [...tasks, {text, isCompleted: false}]
+        setTasks(temVar)
+    }
 
     return (
         <div>
+            <h1>ToDoList</h1>
             <TableForTasks list={tasks}/>
-            <FormForTask/>
+            <FormForTask addToDoNewTask={addToDoNewTask}/>
         </div>
     )
 }

@@ -1,16 +1,21 @@
 
+import Table from 'react-bootstrap/Table';
+
+
 const TableForTasks = (props) => {
 
-    console.log(props.list)
+    // console.log(props.list)
+    console.log(props)
 
     return (
-        <table>
+        <Table striped>
             <thead>
-                <th>eil.nr</th>
-                <th>uzduotis</th>
-                <th>ar uzbaigta</th>
+                <tr>
+                    <th>Task Nr.</th>
+                    <th>Task</th>
+                    <th>Progress</th>
+                </tr>
             </thead>
-
             <tbody>
                 {
                     props.list.map((task, index)=>(
@@ -22,9 +27,10 @@ const TableForTasks = (props) => {
                     ))
                 }
             </tbody>
-            
-        </table>
+        </Table>
     )
 }
 
 export default TableForTasks
+
+
